@@ -1,0 +1,37 @@
+{{!-- Total expense --}}
+<div class="total-exps">
+  <table>
+    <tr>
+      <td>Total Expense: </td>
+      <td>
+        <h3 class="mt-2 title-amount">$<span id="total-amount"></span></h3>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+{{!-- Detail of expense lists --}}
+<div class="exps-list">
+  <table class="table table-striped rounded index-table">
+    <tbody class="rounded">
+      {{#each expenses}}
+        <tr class="expense-group">
+          <td class="link-col" id="detail-link" style="text-align: center;" data-href="/exps/dtl/{{this._id}}">{{this.category}}</td>
+
+          <td class="link-col">
+            {{this.title}}
+            <span style="display: block; font-size: 0.5rem;">{{ this.date }}</span>
+          </td>
+    
+          <td class="link-col" style="text-align: center;">NT: <span class="amount">{{this.amount}}</span></td>
+
+          <td style="text-align: center;"><a href="/exps/dtl/{{this._id}}" class="btn btn-outline-dark">修改</a>
+          <form action="/exps/del/{{ this._id }}/?_method=DELETE" method="POST" style="display: inline;">
+            <button class="btn btn-outline-primary">刪除</button>
+          </form></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

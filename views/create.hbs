@@ -1,0 +1,43 @@
+<form action="/exps/create" method="POST">
+
+  <div class="input-group input-group-md detail-group">
+    <span class="input-group-text detail-group-title">種類:</span>
+    <select class="form-select form-group" aria-label="Default select example" name="category">
+      <option selected hidden>請選擇種類</option>
+      <option value="飲食">飲食</option>
+      <option value="交通">交通</option>
+      <option value="生活">生活</option>
+    </select>
+  </div>
+
+  <div class="input-group input-group-md detail-group">
+    <span class="input-group-text detail-group-title">項目:</span>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+      placeholder="you spent your money on..?" name="title">
+  </div>
+
+  <div class="input-group input-group-md detail-group">
+    <span class="input-group-text detail-group-title">日期:</span>
+    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+      value="2021-07-14" name="date">
+  </div>
+
+  <div class="input-group input-group-md detail-group">
+    <span class="input-group-text detail-group-title">價錢:</span>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+      placeholder="How much?" name="amount" name="amount">
+  </div>
+
+  <div class="input-group detail-group">
+    <span class="input-group-text">Remark</span>
+    <textarea class="form-control" aria-label="With textarea" name="remark"></textarea>
+  </div>
+
+  <div class="detail-group d-flex justify-content-center">
+    <button type="submit" class="btn btn-outline-primary mx-2">Submit</button>
+    <form action="/exps/del/{{ this._id }}/?_method=DELETE" method="POST">
+      <button class="btn btn-outline-danger mx-2">刪除</button>
+    </form>
+  </div>
+
+</form>
