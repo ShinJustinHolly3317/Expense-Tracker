@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true })
-
+const MONGO_DB = process.env.MONOGO_DB || 'mongodb://localhost/expense-tracker'
+mongoose.connect(MONGO_DB, { useNewUrlParser: true, useUnifiedTopology: true })
 const dbRes = mongoose.connection
 
 dbRes.on('error', () => {
