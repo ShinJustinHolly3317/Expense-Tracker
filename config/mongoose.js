@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const MONGO_DB = process.env.MONOGO_DB || 'mongodb://localhost/expense-tracker'
+const MONGO_DB = process.env.MONGO_DB || 'mongodb://localhost/expense-tracker'
 mongoose.connect(MONGO_DB, { useNewUrlParser: true, useUnifiedTopology: true })
 const dbRes = mongoose.connection
 
